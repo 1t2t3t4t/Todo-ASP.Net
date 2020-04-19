@@ -8,11 +8,16 @@ namespace TodoApiCSharp.Database
     {
         public DbSet<Todo> Todo { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        private IConnectionProvider ConnectionProvider { get; }
+
+        public TodoContext(IConnectionProvider connectionProvider)
         {
-            IConnectionProvider connectionProvider = new ConnectionProvider();
-            optionsBuilder.UseMySql(connectionProvider.GetConnectionString(ConnectionEnvironment.Development));
+            ConnectionProvider = connectionProvider;
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql(ConnectionProvider.GetConnectionString(ConnectionEnvironment.Development));
+        }
     }
 }

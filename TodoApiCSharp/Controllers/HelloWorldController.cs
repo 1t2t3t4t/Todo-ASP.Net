@@ -17,7 +17,6 @@ namespace TodoApiCSharp.Controllers
         public HelloWorldController(TodoContext DbContext)
         {
             this.DbContext = DbContext;
-            DbContext.Database.EnsureCreated();
         }
         
         [HttpGet]
