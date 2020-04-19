@@ -14,9 +14,9 @@ namespace TodoApiCSharp.Controllers
 
         private TodoContext DbContext { get; }
 
-        public HelloWorldController()
+        public HelloWorldController(TodoContext DbContext)
         {
-            DbContext = new TodoContext();
+            this.DbContext = DbContext;
             DbContext.Database.EnsureCreated();
             DbContext.Add<Todo>(new Todo("someId", "Make ToDo API", "Learn making API with ASP.NET Core"));
             DbContext.SaveChanges();
