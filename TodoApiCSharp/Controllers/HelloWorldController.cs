@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TodoApiCSharp.Entity;
-using TodoApiCSharp.Models;
+using TodoApiCSharp.Database;
+using TodoApiCSharp.Database.Entity;
 
 namespace TodoApiCSharp.Controllers
 {

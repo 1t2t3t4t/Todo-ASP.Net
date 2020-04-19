@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TodoApiCSharp.Models
+namespace TodoApiCSharp.Database.Entity
 {
     public class Todo
     {

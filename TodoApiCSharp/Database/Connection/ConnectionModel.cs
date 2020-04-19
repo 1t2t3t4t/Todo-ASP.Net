@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TodoApiCSharp.Entity.Connection
+namespace TodoApiCSharp.Database.Connection
 {
     public class ConnectionModel
     {

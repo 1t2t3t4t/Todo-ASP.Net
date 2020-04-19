@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TodoApiCSharp.Entity.Connection;
-using TodoApiCSharp.Models;
+using TodoApiCSharp.Database.Connection;
+using TodoApiCSharp.Database.Entity;
 
-namespace TodoApiCSharp.Entity
+namespace TodoApiCSharp.Database
 {
     public class TodoContext : DbContext
     {
