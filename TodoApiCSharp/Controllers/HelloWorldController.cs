@@ -18,15 +18,15 @@ namespace TodoApiCSharp.Controllers
         {
             this.DbContext = DbContext;
             DbContext.Database.EnsureCreated();
-            DbContext.Add<Todo>(new Todo("someId", "Make ToDo API", "Learn making API with ASP.NET Core"));
-            DbContext.SaveChanges();
         }
         
         [HttpGet]
         [Route("")]
         public ActionResult<Todo> HelloWorld(string title)
         {
-            var todo = new Todo("test", title, "Some description");
+            var todo = new Todo(title, "Some description");
+            DbContext.Add<Todo>(todo);
+            DbContext.SaveChanges();
             return todo;
         }
     }
